@@ -1,1 +1,5 @@
 .aws-credentials
+admin_accessKeys.csv
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
