@@ -12,7 +12,7 @@ resource "null_resource" "kubeconfig" {
   }
 
   provisioner "local-exec" {
-      command = "kubectl config set-credentials ${aws_eks_cluster.new-cluster.arn} --exec-api-version='client.authentication.k8s.io/v1beta1' --exec-command='aws-iam-authenticator' --exec-arg='token' --exec-arg='-i' --exec-arg='${aws_eks_cluster.new-cluster.name}' --exec-env='AWS_PROFILE=fc'"
+      command = "kubectl config set-credentials ${aws_eks_cluster.new-cluster.arn} --exec-api-version='client.authentication.k8s.io/v1beta1' --exec-command='aws-iam-authenticator' --exec-arg='token' --exec-arg='-i' --exec-arg='${aws_eks_cluster.new-cluster.name}' --exec-env='AWS_PROFILE=${var.aws_profile}'"
   }
 
   provisioner "local-exec" {
