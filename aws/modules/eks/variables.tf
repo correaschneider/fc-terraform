@@ -1,0 +1,9 @@
+variable "prefix" {}
+variable "vpc_id" {}
+variable "cluster_name" {}
+variable "cloudwatch_retention_days_log" {}
+variable "subnet_ids" {}
+variable "security_group_id" {}
+variable "node_desired_size" {}
+variable "node_max_size" {}
+variable "node_min_size" {}
