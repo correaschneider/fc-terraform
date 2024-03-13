@@ -56,7 +56,7 @@ resource "aws_eks_cluster" "cluster" {
   enabled_cluster_log_types = ["api", "audit"]
   vpc_config {
     subnet_ids = var.subnet_ids
-    security_group_ids = [var.security_group_id]
+    security_group_ids = [aws_security_group.sg.id]
   }
 
   depends_on = [
